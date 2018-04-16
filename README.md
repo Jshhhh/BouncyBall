@@ -18,7 +18,8 @@ Wednesday
 	- *extra time
 		- add nightmare mode (inconsistent/unpredictable movement speeds)
 
-Functions: 
+Functions
+
 	- when ball is clicked, move to next level(increase speed)
 	- change the speed of the bal
   
