@@ -1,7 +1,7 @@
 # BouncyBall
 Recreating: https://jenniferdewalt.com/bouncing_ball.html
 
-/* Bouncy Ball
+Bouncy Ball
 
 Tuesday
 
@@ -23,4 +23,4 @@ Functions
 	- when ball is clicked, move to next level(increase speed)
 	- change the speed of the bal
   
-*/
+
