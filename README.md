@@ -21,6 +21,6 @@ Wednesday
 Functions
 
 	- when ball is clicked, move to next level(increase speed)
-	- change the speed of the bal
+	- change the speed of the ball
   
 
