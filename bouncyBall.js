@@ -5,7 +5,12 @@ $(document).ready(function() {
 		//set css y axis ball to increment after certain setTimeout interval < 500ms
 		//when y increments to ~500 px then start decrement to ~100
 		//increment back to 500
-
+	var speed = 1000;
+	function bounce(time) {
+		$('ellipse').animate({cy: 500}, time).animate({cy: 80}, time, function() {bounce(time);});
+	}
+	bounce(speed);
+	//setTimeout(bounce(3000), 100000) //runs bounce() after X seconds then reverts to original speed for 1 cycle
 
 	//on ball click
 		//ball disappears
