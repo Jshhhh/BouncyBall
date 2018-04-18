@@ -5,11 +5,30 @@ $(document).ready(function() {
 		//set css y axis ball to increment after certain setTimeout interval < 500ms
 		//when y increments to ~500 px then start decrement to ~100
 		//increment back to 500
-	var speed = 1000;
+	var speed = 1500;
+	var interval = setInterval(function() {bounce(speed)}, 10);
+
+	//bounce animation function, speed increases as time decreases
 	function bounce(time) {
-		$('ellipse').animate({cy: 500}, time).animate({cy: 80}, time, function() {bounce(time);});
+		$('ellipse').animate({cy: 500}, time)
+		$('ellipse').animate({cy: 80}, time);	
 	}
-	bounce(speed);
+	function createBall() {
+		$('svg').prepend('<ellipse cx="55" cy="80" rx="45" ry="45" style="fill:green" cursor= "pointer"/>')
+	}
+	setTimeout(function() {bounce(speed)}, 3000);
+	$('ellipse').click(function() {
+		clearInterval(interval);
+		//$('ellipse').stop(true, true);
+		//setTimeout(function() {createBall()}, 6000)
+		speed -= 100;
+		//setTimeout(function() {bounce(speed)}, 9000);
+		console.log(speed);
+	});
+	
+	$('body').click(function() {
+		console.log(speed);
+	});
 	//setTimeout(bounce(3000), 100000) //runs bounce() after X seconds then reverts to original speed for 1 cycle
 
 	//on ball click
