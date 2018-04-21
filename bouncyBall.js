@@ -6,7 +6,7 @@ $(document).ready(function() {
 		//when y increments to ~500 px then start decrement to ~100
 		//increment back to 500
 	var speed = 1500;
-	var interval = setInterval(function() {bounce(speed)}, 10);
+	//var interval = setInterval(function() {bounce(speed)}, 10);
 
 	//bounce animation function, speed increases as time decreases
 	function bounce(time) {
@@ -14,20 +14,18 @@ $(document).ready(function() {
 		$('ellipse').animate({cy: 80}, time);	
 	}
 	function createBall() {
-		$('svg').prepend('<ellipse cx="55" cy="80" rx="45" ry="45" style="fill:green" cursor= "pointer"/>')
+		$('svg').prepend('<ellipse cx="250" cy="80" rx="45" ry="45" style="fill:green" cursor= "pointer"/>');
+		// bounce(speed);
 	}
-	setTimeout(function() {bounce(speed)}, 3000);
+
+	createBall();
+	//setTimeout(function() {bounce(speed)}, 3000);
 	$('ellipse').click(function() {
-		clearInterval(interval);
 		//$('ellipse').stop(true, true);
 		//setTimeout(function() {createBall()}, 6000)
 		speed -= 100;
 		//setTimeout(function() {bounce(speed)}, 9000);
-		console.log(speed);
-	});
-	
-	$('body').click(function() {
-		console.log(speed);
+		//createBall();
 	});
 	//setTimeout(bounce(3000), 100000) //runs bounce() after X seconds then reverts to original speed for 1 cycle
 
